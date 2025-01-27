@@ -5,8 +5,9 @@ import java.util.Vector;
 public class StackVector<E> implements Stack<E> {
 
     private Vector<E> vector;
-
-    public StackVector() {
+    
+    // El constructor genera un nuevo vector cuando se hace una estancia de la clase
+    public StackVector() { 
         this.vector = new Vector<>(); 
     }
 
@@ -24,7 +25,7 @@ public class StackVector<E> implements Stack<E> {
             return null;
         }
 
-        vector.removeLast()
+        return vector.removeLast();
     }
     // pre: stack is not empty
     // post: most recently pushed item is removed and returned
@@ -43,13 +44,16 @@ public class StackVector<E> implements Stack<E> {
 
     @Override
     public boolean empty() {
-
+        if (vector.isEmpty()) {
+            return true;
+        }
+        return false; 
     }
     // post: returns true if and only if the stack is empty
 
     @Override
     public int size() {
-
+        return vector.size();
     }
     // post: returns the number of elements in the stack
 
