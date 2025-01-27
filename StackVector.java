@@ -25,7 +25,7 @@ public class StackVector<E> implements Stack<E> {
             return null;
         }
 
-        return vector.removeLast();
+        return vector.remove(vector.size() - 1);
     }
     // pre: stack is not empty
     // post: most recently pushed item is removed and returned
