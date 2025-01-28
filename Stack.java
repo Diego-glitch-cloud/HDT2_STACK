@@ -1,4 +1,3 @@
-package HDT2_STACK;
 
 public interface Stack<E> 
 {
