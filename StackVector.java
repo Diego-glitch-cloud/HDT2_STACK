@@ -1,6 +1,3 @@
-
-package HDT2_STACK;
-
 import java.util.Vector;
 
 public class StackVector<E> implements Stack<E> {

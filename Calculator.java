@@ -1,10 +1,9 @@
-import java.util.Stack;
 
 public class Calculator {
 
     public void evaluate(String operation) {
         // Creating the instance of the Stack
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new StackVector<>();
 
         // Creating a bool variable to make sure the operation was done properly
         boolean success = true;
