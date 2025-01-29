@@ -2,6 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Clase Main, encargada de manejar el programa
+ * 
+ * @author Fabian Prado
+ * @version 1.0
+ */
 public class Main {
 
     // Read the file 

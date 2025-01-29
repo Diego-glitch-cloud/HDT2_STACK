@@ -3,8 +3,21 @@ import org.junit.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-
+/**
+ * La clase ValidOperationsTest contiene pruebas unitarias para evaluar 
+ * el comportamiento del método evaluate de la clase Calculator cuando se 
+ * realizan operaciones válidas.
+ * 
+ * @version 1.0
+ * @author Adrian Penagos
+ */
 public class ValidOperationsTest {
+
+    /**
+     * Prueba que verifica si el método evaluate de la clase Calculator 
+     * realiza correctamente las operaciones de suma, resta, multiplicación, 
+     * división y módulo.
+     */
     @Test
     public void testEvaluateValidOperations() {
         Calculator calculator = new Calculator();

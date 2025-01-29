@@ -1,17 +1,29 @@
-
+/**
+ * La clase Calculator realiza evaluaciones de operaciones aritméticas postfix 
+ * utilizando nuestro StackVector.
+ * 
+ * @author Fabian Prado
+ * @version 1.0
+ */
 public class Calculator {
 
+    /**
+     * Evalúa una operación aritmética dada en forma de cadena. La operación
+     * puede contener números y los operadores +, -, *, /, %.
+     * 
+     * @param operation La cadena que representa la operación aritmética.
+     */
     public void evaluate(String operation) {
-        // Creating the instance of the Stack
+        // Creación de la instancia de la pila
         Stack<Integer> stack = new StackVector<>();
 
-        // Creating a bool variable to make sure the operation was done properly
+        // Creación de una variable booleana para asegurar que la operación se realizó correctamente
         boolean success = true;
 
         for (int i = 0; i < operation.length(); i++) {
             char placeholder = operation.charAt(i);
 
-            // Checking if the character is a number and if it has more than one digit
+            // Verificar si el carácter es un número y si tiene más de un dígito
             if (Character.isDigit(placeholder)) {
                 int number = Character.getNumericValue(placeholder);
 
@@ -22,23 +34,23 @@ public class Calculator {
 
                 stack.push(number);
             } 
-            // Checking for valid operators
+            // Verificar operadores válidos
             else if (placeholder == '+' || placeholder == '-' || placeholder == '*' || 
                      placeholder == '/' || placeholder == '%') {
 
-                // Checking there is enough numbers to operate
+                // Verificar que haya suficientes números para operar
                 if (stack.size() < 2) {
                     System.out.println("Not enough numbers for operation");
                     success = false;
                     break;
                 }
 
-                // Getting both numbers
+                // Obtener ambos números
                 int b = stack.pop();
                 int a = stack.pop();
                 int result = 0;
 
-                // Choosing the operation to perform
+                // Seleccionar la operación a realizar
                 switch (placeholder) {
                     case '+':
                         result = a + b;
@@ -65,7 +77,7 @@ public class Calculator {
                 if (!success) break;
                 stack.push(result);
             } 
-            // Handle invalid characters while ignoring spaces
+            // Manejar caracteres no válidos, ignorando espacios
             else if (placeholder != ' ') {
                 success = false;
                 System.out.println("The string contains an invalid character");
@@ -74,7 +86,7 @@ public class Calculator {
         }
 
         if (success) {
-            // Making sure there is only one number left in the Stack
+            // Asegurarse de que solo quede un número en la pila
             if (stack.size() == 1) {
                 System.out.println("Result: " + stack.pop());
             } else {

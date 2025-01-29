@@ -1,11 +1,23 @@
 import org.junit.*;
 
+/**
+ * La clase PopAndPeekTest contiene pruebas unitarias para evaluar 
+ * el comportamiento de los métodos pop y peek de la clase StackVector.
+ * 
+ * @version 1.0
+ * @author Adrian Penagos
+ */
 public class PopAndPeekTest {
+
+    /**
+     * Prueba que verifica las operaciones de agregar, obtener y eliminar
+     * elementos en un StackVector.
+     */
     @Test
     public void testPopAndPeek() {
         StackVector<String> stack = new StackVector<>();
         
-        // Añadimos elementos al stack
+        // Añadimos elementos al StackVector
         stack.push("A");
         stack.push("B");
         stack.push("C");
